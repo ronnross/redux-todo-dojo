@@ -2,6 +2,7 @@
 export const ADD_TODO = 'ADD_TODO';
 export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
+export const REMOVE_TODO = 'REMOVE_TODO';
 
 // other constants
 export const VisibilityFilters = {
@@ -22,3 +23,10 @@ export function completeTodo(index) {
 export function setVisibilityFilter(filter) {
   return { type: SET_VISIBILITY_FILTER, filter };
 }
+
+export function removeTodo(index) {
+  return {
+      type: REMOVE_TODO, index };
+}
+
+

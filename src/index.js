@@ -35,7 +35,7 @@ export default class Root extends Component {
         <DebugPanel top right bottom>
           <DevTools store={store}
                     monitor={LogMonitor}
-                    visibleOnLoad={false} />
+                    visibleOnLoad={true} />
         </DebugPanel>
       </div>
     );

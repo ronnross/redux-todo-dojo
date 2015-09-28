@@ -1,16 +1,20 @@
 import React, { Component, PropTypes } from 'react';
+import { removeTodo } from '../actions';
 
 export default class Todo extends Component {
   render() {
     return (
-      <li
-        onClick={this.props.onClick}
-        style={{
-          textDecoration: this.props.completed ? 'line-through' : 'none',
-          cursor: this.props.completed ? 'default' : 'pointer'
-        }}>
-        {this.props.text}
-      </li>
+      <span>
+        <div
+          onClick={this.props.onClick}
+          style={{
+            textDecoration: this.props.completed ? 'line-through' : 'none',
+            cursor: this.props.completed ? 'default' : 'pointer'
+          }}>
+          {this.props.text}
+        </div>
+        <button onClick={() => this.props.dispatch(removeTodo(this.props.key))}>Remove</button>
+      </span>
     );
   }
 }
