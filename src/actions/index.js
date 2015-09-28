@@ -1,19 +1,24 @@
-import axios from 'axios';
+// action types
+export const ADD_TODO = 'ADD_TODO';
+export const COMPLETE_TODO = 'COMPLETE_TODO';
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
-export const REQUEST_SHIPS = 'REQUEST_SHIPS';
-export const RECEIVE_SHIPS = 'RECEIVE_SHIPS';
-export const FETCH_SHIPS = 'FETCH_SHIPS';
+// other constants
+export const VisibilityFilters = {
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_COMPLETED: 'SHOW_COMPLETED',
+  SHOW_ACTIVE: 'SHOW_ACTIVE'
+};
 
-export function requestProjects(params) {
-  return {
-    type: REQUEST_SHIPS,
-    params
-  };
+// action creators
+export function addTodo(text) {
+  return { type: ADD_TODO, text };
 }
 
-export function fetchProjects(params) {
-  return {
-    type: FETCH_SHIPS,
-    response: axios.get('http://swapi.co/api/starships')
-  };
+export function completeTodo(index) {
+  return { type: COMPLETE_TODO, index };
+}
+
+export function setVisibilityFilter(filter) {
+  return { type: SET_VISIBILITY_FILTER, filter };
 }

@@ -1,22 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import { createStore } from 'redux';
-//import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import App from './containers/App';
-//import todoApp from './reducers';
+import todoApp from './reducers';
+import storeConfig from './store';
 
-/*let store = createStore(todoApp);
+let store = createStore(todoApp);
 
-let rootElement = document.getElementById('root');
-React.render(
-  // The child must be wrapped in a function
-  // to work around an issue in React 0.13.
+let rootElement = document.getElementById('main');
+ReactDOM.render(
   <Provider store={store}>
-    {() => <App />}
+    <App />
   </Provider>,
   rootElement
-);*/
-
-
-const targetEl = document.getElementById('main');
-ReactDOM.render(<App />, targetEl);
+);
